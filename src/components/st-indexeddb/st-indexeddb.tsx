@@ -60,8 +60,4 @@ export class StIndexedDB {
   getByIndex(storeName: string, indexName: string, key: any) {
     return this._db.getByIndex(storeName, indexName, key);
   }
-
-  render() {
-    return (<div></div>);
-  }
 }

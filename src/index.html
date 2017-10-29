@@ -21,6 +21,17 @@
 
             objectStore.createIndex("name", "name", { unique: false });
             objectStore.createIndex("email", "email", { unique: true });
+          }).then(() => {
+            db.add('people', { name: 'John', email: 'john@comp.com' }).then(() => {
+                db.getByIndex('people', 'name', 'John').then((person) => {
+                    console.log(person);
+                }, (error) => {
+                    console.log(error);
+                });
+                db.clear('people');
+            }, (error) => {
+                console.log(error);
+            });
           });
       }, 500);
     }());

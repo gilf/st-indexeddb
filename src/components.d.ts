@@ -4,33 +4,42 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-import { MyComponent as MyComponent } from './components/my-component/my-component';
+import { StIndexedDB as StIndexeddb } from './components/st-indexeddb/st-indexeddb';
 
-interface HTMLMyComponentElement extends MyComponent, HTMLElement {
+interface HTMLStIndexeddbElement extends StIndexeddb, HTMLElement {
 }
-declare var HTMLMyComponentElement: {
-  prototype: HTMLMyComponentElement;
-  new (): HTMLMyComponentElement;
+declare var HTMLStIndexeddbElement: {
+  prototype: HTMLStIndexeddbElement;
+  new (): HTMLStIndexeddbElement;
 };
 declare global {
   interface HTMLElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+      "st-indexeddb": HTMLStIndexeddbElement;
   }
   interface ElementTagNameMap {
-      "my-component": HTMLMyComponentElement;
+      "st-indexeddb": HTMLStIndexeddbElement;
   }
   namespace JSX {
       interface IntrinsicElements {
-          "my-component": JSXElements.MyComponentAttributes;
+          "st-indexeddb": JSXElements.StIndexeddbAttributes;
       }
   }
   namespace JSXElements {
-      export interface MyComponentAttributes extends HTMLAttributes {
+      export interface StIndexeddbAttributes extends HTMLAttributes {
           mode?: string,
           color?: string,
         
-          first?: string,
-          last?: string
+          openDatabase?: any,
+          getByKey?: any,
+          getAll?: any,
+          add?: any,
+          update?: any,
+          delete?: any,
+          openCursor?: any,
+          clear?: any,
+          getByIndex?: any,
+          dbName?: string,
+          version?: number
       }
   }
 }

@@ -1,14 +1,14 @@
 {
-  "name": "my-name",
+  "name": "st-indexeddb",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "st-indexeddb is a Stencil wrapper on top of indexedDB",
   "main": "dist/collection/index.js",
   "types": "dist/collection/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/mycomponent.js",
+  "browser": "dist/stindexeddb.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
   },
-  "author": "Ionic Team",
+  "author": "Gil Fink",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"

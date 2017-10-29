@@ -3,13 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <title>st-indexeddb</title>
+  <script src="/build/stindexeddb.js"></script>
 
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <st-indexeddb db-name="my-db" version="1"></st-indexeddb>
+
+  <script>
+    (function() {
+        setTimeout(() => {
+          var db = document.querySelector('st-indexeddb');
+          db.openDatabase(1, (evt) => {
+            let objectStore = evt.currentTarget.result.createObjectStore(
+              'people', { keyPath: "id", autoIncrement: true });
+
+            objectStore.createIndex("name", "name", { unique: false });
+            objectStore.createIndex("email", "email", { unique: true });
+          });
+      }, 500);
+    }());
+  </script>
 
 </body>
 </html>

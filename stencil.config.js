@@ -1,12 +1,12 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'stIndexeddb',
   generateDistribution: true,
   bundles: [
-    { components: ['my-component'] }
+    { components: ['st-indexeddb'] }
   ]
 };
 
 exports.devServer = {
   root: 'www',
   watchGlob: '**/**'
-}
+};
